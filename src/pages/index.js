@@ -32,6 +32,7 @@ export default class IndexPage extends Component {
         </div>
         <div className="section">
           <h1>Contact</h1>
+
           <h2>We would love to get in touch. Let us know how to:</h2>
           <form>
             <div>
@@ -46,20 +47,30 @@ export default class IndexPage extends Component {
         </div>
         <div className="section">
           <h1>How it works</h1>
+          <div className="imageBlock">{}</div>
           <h2>
             Riota Set up a network of sticker sensors on the hotel room that
             measures energy and water consumption in real time
           </h2>
+        </div>
+        <div className="section">
+          <div className="imageBlock">{}</div>
           <h2>
             Guests are offered rewards when consuming less energy and water than
             average
           </h2>
           <h2>Bar/Restaurant vouchers</h2>
           <h2>Discounts for future stays when booked direct</h2>
+        </div>
+        <div className="section">
+          <div className="imageBlock">{}</div>
           <h2>
             Guest redeem their prizes, enhancing their guest experience and
             generating upselling opportunities
           </h2>
+        </div>
+        <div className="section">
+          <div className="imageBlock">{}</div>
           <h2>
             Riota manages the whole process to ensure a smooth experience from
             both the guest and the staff, being integrated with their routine
