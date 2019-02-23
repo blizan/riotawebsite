@@ -2,7 +2,7 @@ import React from "react"
 // import { Link } from "gatsby"
 import Image from "../components/image"
 import SEO from "../components/seo"
-import "./style.css"
+import "./style.scss"
 
 const IndexPage = () => (
   <div className="main">
