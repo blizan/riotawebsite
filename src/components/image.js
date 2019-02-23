@@ -13,11 +13,11 @@ import Img from "gatsby-image"
  * - `StaticQuery`: https://gatsby.app/staticquery
  */
 
-const Image = () => (
+const Image = path => (
   <StaticQuery
     query={graphql`
       query {
-        placeholderImage: file(relativePath: { eq: "gatsby-astronaut.png" }) {
+        placeholderImage: file(relativePath: { eq: "riota-logo.png" }) {
           childImageSharp {
             fluid(maxWidth: 300) {
               ...GatsbyImageSharpFluid
