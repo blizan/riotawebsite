@@ -1,8 +1,8 @@
 import React, { Component } from "react"
 // import { Link } from "gatsby"
-import Image from "../components/image"
 import SEO from "../components/seo"
 import "./style.scss"
+import logo from "../images/riota-logo.png"
 
 const adjectives = [
   { label: "digital", color: "#2a558a" },
@@ -35,8 +35,8 @@ export default class IndexPage extends Component {
         <SEO title="Home" keywords={[`riota`]} />
 
         <div className="header">
-          <div style={{ width: 150 }}>
-            <Image />
+          <div className="nameRow">
+            <img src={logo} className="logo" />
           </div>
           <h1>
             Take your hotel to the{" "}
@@ -52,14 +52,14 @@ export default class IndexPage extends Component {
             </span>{" "}
             era.
           </h1>
-          <div className="row">
-            <div className="column">
+          <div className="subheaders">
+            <div className="subheader">
               <h2>
                 Riota helps hotels to save 35% of their in-room energy &amp;
                 water expenditures
               </h2>
             </div>
-            <div className="column">
+            <div className="subheader">
               <h2>
                 Riota helps hotels to increase revenue and increase direct
                 bookings.

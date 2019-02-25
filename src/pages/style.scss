@@ -4,11 +4,21 @@ $yellow: #ffbf00;
 $pink: #e73f70;
 $lightBlue: #38bdf2;
 
+$gray3: #cccccc;
 $gray5: white;
 
 $spacingSmall: 20px;
 
 $innerShadowColor: rgba(0, 0, 0, 0.3);
+
+h1 {
+  font-weight: 500;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 300;
+}
 
 html {
   font-family: sans-serif;
@@ -19,15 +29,24 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: $gray3;
 }
 
 .main {
   margin: 0 auto;
   max-width: 960px;
+  background-color: $gray5;
 }
 
 .header {
-  background-color: $lightBlue;
+  background-image: linear-gradient(
+      rgba($lightBlue, 0.9),
+      rgba($lightBlue, 0.8)
+    ),
+    url("../images/bedroom-door-entrance-271639.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  // background-color: $lightBlue;
   padding: $spacingSmall;
   -moz-box-shadow: inset 0 0 100px $innerShadowColor;
   -webkit-box-shadow: inset 0 0 100px $innerShadowColor;
@@ -35,14 +54,33 @@ body {
   text-align: center;
   color: $gray5;
 
-  .row {
+  h1 {
+    margin: 30px 0;
+  }
+
+  h2 {
+    margin: 0;
+  }
+
+  .nameRow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .logo {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
+  .subheaders {
     display: flex;
     flex-direction: row;
-  }
-  .column {
-    display: inline-block;
-    flex: 1;
-    padding: $spacingSmall;
+    .subheader {
+      display: inline-block;
+      flex: 1;
+      padding: $spacingSmall;
+    }
   }
 }
 
@@ -55,4 +93,21 @@ body {
   width: 100px;
   height: 100px;
   background-color: gray;
+}
+
+@media (max-width: 576px) {
+  .header {
+    .subheaders {
+      display: flex;
+      flex-direction: column;
+
+      .subheader {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (max-width: 768px) {
 }
