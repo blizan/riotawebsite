@@ -1,8 +1,10 @@
 $blue: #2a558a;
+$blueDark: darken($blue, 20%);
 $green: #6f8e2f;
 $yellow: #ffbf00;
 $pink: #e73f70;
 $lightBlue: #38bdf2;
+$lightBlueDark: darken(#38bdf2, 20%);
 
 $gray3: #cccccc;
 $gray5: white;
@@ -30,7 +32,7 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $gray3;
+  background-color: $blueDark;
 }
 
 .main {
@@ -41,26 +43,28 @@ body {
 
 .header {
   background-image: linear-gradient(
-      rgba($lightBlue, 0.9),
-      rgba($lightBlue, 0.8)
+      rgba($lightBlueDark, 0.9),
+      rgba($lightBlueDark, 0.8)
     ),
     url("../images/bedroom-door-entrance-271639.jpg");
   background-size: cover;
   background-position: 50% 50%;
   // background-color: $lightBlue;
   padding: $spacingSmall;
-  -moz-box-shadow: inset 0 0 100px $innerShadowColor;
-  -webkit-box-shadow: inset 0 0 100px $innerShadowColor;
-  box-shadow: inset 0 0 100px $innerShadowColor;
+  // -moz-box-shadow: inset 0 0 100px $innerShadowColor;
+  // -webkit-box-shadow: inset 0 0 100px $innerShadowColor;
+  // box-shadow: inset 0 0 100px $innerShadowColor;
   text-align: center;
   color: $gray5;
+  height: 350px;
 
   h1 {
-    margin: 30px 0;
+    margin: 60px 0 30px 0;
+    font-size: 60px;
   }
 
   h2 {
-    margin: 0;
+    margin: 30px 0;
   }
 
   .nameRow {
@@ -87,10 +91,12 @@ body {
 
 .contact {
   padding: $spacingSmall;
-  background-color: $gray5;
+  background-color: $green;
+  color: $gray5;
 }
 
-$imageBlockWidth: 250px;
+$imageBlockWidth: 300px;
+$imageMargin: 30px;
 
 .sellPoints {
   padding: $spacingSmall;
@@ -103,13 +109,13 @@ $imageBlockWidth: 250px;
     border-bottom: 1px solid $gray3;
     display: flex;
     align-items: center;
-    padding: 50px 0px;
+    padding: $imageMargin 0px;
 
     .imageBlock {
       width: $imageBlockWidth;
       height: $imageBlockWidth;
-      background-color: $gray3;
-      margin: 0px 50px;
+
+      margin: 0px $imageMargin;
 
       img {
         width: 100%;
@@ -121,7 +127,7 @@ $imageBlockWidth: 250px;
 
     .sectionText {
       flex: 1;
-      margin: 0px 50px;
+      margin: 0px $imageMargin;
     }
   }
 }

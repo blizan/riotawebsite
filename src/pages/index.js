@@ -5,6 +5,9 @@ import "./style.scss"
 import logo from "../images/riota-logo.png"
 
 import hotelRoom from "../images/bed-bedroom-furniture-271616.jpg"
+import hotelBar from "../images/alcohol-bar-beer-941864.jpg"
+import upsell from "../images/bar-beard-bokeh-853151.jpg"
+import manage from "../images/agreement-business-businessmen-886465.jpg"
 
 const adjectives = [
   { label: "digital", color: "#2a558a" },
@@ -113,7 +116,7 @@ export default class IndexPage extends Component {
           </div>
           <div className="section reverse">
             <div className="imageBlock">
-              <img src={hotelRoom} />
+              <img src={hotelBar} />
             </div>
             <div className="sectionText">
               <h2>
@@ -128,7 +131,7 @@ export default class IndexPage extends Component {
           </div>
           <div className="section">
             <div className="imageBlock">
-              <img src={hotelRoom} />
+              <img src={upsell} />
             </div>
             <div className="sectionText">
               <h2>
@@ -139,7 +142,7 @@ export default class IndexPage extends Component {
           </div>
           <div className="section reverse">
             <div className="imageBlock">
-              <img src={hotelRoom} />
+              <img src={manage} />
             </div>
             <div className="sectionText">
               <h2>
