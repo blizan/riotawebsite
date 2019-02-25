@@ -4,6 +4,8 @@ import SEO from "../components/seo"
 import "./style.scss"
 import logo from "../images/riota-logo.png"
 
+import hotelRoom from "../images/bed-bedroom-furniture-271616.jpg"
+
 const adjectives = [
   { label: "digital", color: "#2a558a" },
   { label: "green", color: "#6f8e2f" },
@@ -84,20 +86,24 @@ export default class IndexPage extends Component {
         </div>
         <div className="section">
           <h1>How it works</h1>
-          <div className="imageBlock">{}</div>
+          <div className="imageBlock">
+            <img src={hotelRoom} />
+          </div>
           <h2>
-            Riota Set up a network of sticker sensors on the hotel room that
-            measures energy and water consumption in real time
+            Riota sets up a network of sticker sensors on the hotel room that
+            measures energy and water consumption in real time.
           </h2>
         </div>
         <div className="section">
           <div className="imageBlock">{}</div>
           <h2>
             Guests are offered rewards when consuming less energy and water than
-            average
+            average.
           </h2>
-          <h2>Bar/Restaurant vouchers</h2>
-          <h2>Discounts for future stays when booked direct</h2>
+          <ul>
+            <li>Bar/Restaurant vouchers</li>
+            <li>Discounts for future stays when booked direct</li>
+          </ul>
         </div>
         <div className="section">
           <div className="imageBlock">{}</div>
