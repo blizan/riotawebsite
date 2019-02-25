@@ -82,20 +82,18 @@ export default class IndexPage extends Component {
   renderContact() {
     return (
       <div className="contact">
-        <div className="innerColumn">
-          <h1>Contact</h1>
-
-          <h2>We would love to get in touch. Let us know how to:</h2>
-          <form>
-            <div>
-              <label>Name</label>
-              <input />
-            </div>
-            <div>
-              <label>Business Email</label>
-              <input />
-            </div>
-          </form>
+        <div className="innerColumn contactInner">
+          <div className="cta">
+            <h1>Contact Us</h1>
+          </div>
+          <div className="formContainer">
+            <p>We would love to get in touch. Let us know how to:</p>
+            <form>
+              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Business Email" />
+              <input type="submit" value="Submit" />
+            </form>
+          </div>
         </div>
       </div>
     )
