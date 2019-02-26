@@ -25,7 +25,7 @@ library.add(faPiggyBank, faChartLine, faWifi, faDollarSign, faSmile, faIceCream)
 
 const adjectives = [
   { label: "DIGITAL", color: "#2a558a" },
-  { label: "GREEN", color: "#6f8e2f" },
+  { label: "GREEN", color: "#489D3D" },
 ]
 
 export default class IndexPage extends Component {
@@ -294,6 +294,11 @@ export default class IndexPage extends Component {
                   routine
                 </h2>
               </div>
+            </div>
+            <div>
+              <p style={{ textAlign: "center", margin: 100 }}>
+                Copyright Riota 2019
+              </p>
             </div>
           </div>
         </div>
