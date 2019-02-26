@@ -152,6 +152,7 @@ export default class IndexPage extends Component {
                 water expenditures
               </h2>
             </div>
+
             <div className="subheader">
               <FontAwesomeIcon icon="chart-line" style={{ fontSize: 60 }} />
               <h2>
@@ -232,6 +233,7 @@ export default class IndexPage extends Component {
                 </h2>
               </div>
             </div>
+            <div class="divider" />
             <div className="section reverse">
               <div
                 className="imageBlock"
@@ -254,6 +256,7 @@ export default class IndexPage extends Component {
                 </ul>
               </div>
             </div>
+            <div class="divider" />
             <div className="section">
               <div
                 className="imageBlock"
@@ -272,6 +275,7 @@ export default class IndexPage extends Component {
                 </h2>
               </div>
             </div>
+            <div class="divider" />
             <div className="section reverse">
               <div
                 className="imageBlock"
