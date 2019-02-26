@@ -102,6 +102,7 @@ body {
   // padding: $spacingSmall;
   background-color: $green;
   color: $gray5;
+  padding: $spacingSmall;
 
   .contactInner {
     display: flex;
@@ -126,8 +127,6 @@ body {
   }
 
   form {
-    // background-color: $blue;
-    // padding: $spacingTiny;
     flex: 1;
     display: flex;
     height: 50px;
@@ -141,6 +140,7 @@ body {
   }
 
   input[type="submit"] {
+    background-color: red;
     width: 100px;
     height: 60px;
     margin: 10px;
@@ -205,6 +205,31 @@ $imageMargin: 30px;
       }
     }
   }
+  .contact {
+    .contactInner {
+      display: block;
+    }
+
+    form {
+      flex-direction: column;
+      height: auto;
+
+      input[type="text"] {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+
+      input[type="submit"] {
+        width: 100%;
+        box-sizing: border-box;
+        font-size: 18px;
+        margin: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
 
   .sellPoints {
     .section {
@@ -215,8 +240,4 @@ $imageMargin: 30px;
       }
     }
   }
-}
-
-// Medium devices (tablets, 768px and up)
-@media (max-width: 768px) {
 }
