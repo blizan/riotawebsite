@@ -11,16 +11,17 @@ import loader from "../images/loader.gif"
 
 //font awesome stuff
 import { library } from "@fortawesome/fontawesome-svg-core"
-// import { fab } from "@fortawesome/free-brands-svg-icons"
 import {
-  faCheckSquare,
-  faCoffee,
+  faWifi,
+  faSmile,
+  faDollarSign,
   faPiggyBank,
   faChartLine,
+  faIceCream,
 } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
-library.add(faCheckSquare, faCoffee, faPiggyBank, faChartLine)
+library.add(faPiggyBank, faChartLine, faWifi, faDollarSign, faSmile, faIceCream)
 
 const adjectives = [
   { label: "DIGITAL", color: "#2a558a" },
@@ -145,14 +146,14 @@ export default class IndexPage extends Component {
           </h1>
           <div className="subheaders">
             <div className="subheader">
-              <FontAwesomeIcon icon="piggy-bank" style={{ fontSize: 40 }} />
+              <FontAwesomeIcon icon="piggy-bank" style={{ fontSize: 60 }} />
               <h2>
                 Riota helps hotels to save 35% of their in-room energy &amp;
                 water expenditures
               </h2>
             </div>
             <div className="subheader">
-              <FontAwesomeIcon icon="chart-line" style={{ fontSize: 40 }} />
+              <FontAwesomeIcon icon="chart-line" style={{ fontSize: 60 }} />
               <h2>
                 Riota helps hotels to increase revenue and increase direct
                 bookings.
@@ -214,8 +215,15 @@ export default class IndexPage extends Component {
           <div className="innerColumn">
             <h1>How it works</h1>
             <div className="section">
-              <div className="imageBlock">
-                <img src={hotelRoom} />
+              <div
+                className="imageBlock"
+                style={{ backgroundImage: `url(${hotelRoom})` }}
+              >
+                <FontAwesomeIcon
+                  icon="wifi"
+                  style={{ fontSize: 120 }}
+                  color="white"
+                />
               </div>
               <div className="sectionText">
                 <h2>
@@ -225,8 +233,15 @@ export default class IndexPage extends Component {
               </div>
             </div>
             <div className="section reverse">
-              <div className="imageBlock">
-                <img src={hotelBar} />
+              <div
+                className="imageBlock"
+                style={{ backgroundImage: `url(${hotelBar})` }}
+              >
+                <FontAwesomeIcon
+                  icon="dollar-sign"
+                  style={{ fontSize: 120 }}
+                  color="white"
+                />
               </div>
               <div className="sectionText">
                 <h2>
@@ -240,8 +255,15 @@ export default class IndexPage extends Component {
               </div>
             </div>
             <div className="section">
-              <div className="imageBlock">
-                <img src={upsell} />
+              <div
+                className="imageBlock"
+                style={{ backgroundImage: `url(${upsell})` }}
+              >
+                <FontAwesomeIcon
+                  icon="smile"
+                  style={{ fontSize: 120 }}
+                  color="white"
+                />
               </div>
               <div className="sectionText">
                 <h2>
@@ -251,8 +273,15 @@ export default class IndexPage extends Component {
               </div>
             </div>
             <div className="section reverse">
-              <div className="imageBlock">
-                <img src={manage} />
+              <div
+                className="imageBlock"
+                style={{ backgroundImage: `url(${manage})` }}
+              >
+                <FontAwesomeIcon
+                  icon="ice-cream"
+                  style={{ fontSize: 120 }}
+                  color="white"
+                />
               </div>
               <div className="sectionText">
                 <h2>
