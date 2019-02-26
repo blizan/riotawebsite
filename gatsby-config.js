@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: "/riotawebsite",
   siteMetadata: {
     title: `Riota`,
     description: `Take your hotel to the digital era`,
