@@ -132,6 +132,16 @@ body {
     height: 50px;
   }
 
+  .successMsg {
+    text-align: center;
+    color: $gray5;
+  }
+
+  .errorMsg {
+    text-align: center;
+    color: maroon;
+  }
+
   input[type="text"] {
     flex: 1;
     margin-right: 10px;

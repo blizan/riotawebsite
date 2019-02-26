@@ -30,15 +30,29 @@ export default class IndexPage extends Component {
 
   handleSubmit = async event => {
     event.preventDefault()
-    const { email } = this.state
-    console.log("--handleSubmit--", email)
+    const { name, email } = this.state
+    console.log("--handleSubmit--", name, email)
+    if (name.trim() === "") {
+      this.setState({
+        errorMsg: "Please enter a name",
+      })
+      return
+    }
+
     this.setState({
       isLoading: true,
       errorMsg: null,
       successMsg: null,
     })
+
+    const [firstName, lastName] = name.split(" ")
+    console.log(firstName, lastName)
+
     try {
-      const response = await addToMailchimp(email)
+      const response = await addToMailchimp(email, {
+        FNAME: firstName,
+        LNAME: lastName || null,
+      })
       console.log("--success--")
       console.log(response)
       if (response.result === "error") {
@@ -47,14 +61,14 @@ export default class IndexPage extends Component {
         this.setState({
           isLoading: false,
           errorMsg: alreadySubscribed
-            ? "You're already subscribed!"
+            ? "You're already on our list."
             : response.msg,
         })
       } else {
         this.setState({
           isLoading: false,
           errorMsg: null,
-          successMsg: "Thank you for signing up!",
+          successMsg: "Thank you for contacting us!",
         })
       }
     } catch (e) {
@@ -137,7 +151,7 @@ export default class IndexPage extends Component {
   }
 
   renderContact() {
-    const { isLoading } = this.state
+    const { isLoading, errorMsg, successMsg } = this.state
 
     return (
       <div className="contact">
@@ -160,6 +174,11 @@ export default class IndexPage extends Component {
                 onChange={this.handleChangeEmail}
                 disabled={isLoading}
               />
+              {errorMsg !== null && <p className="errorMsg">{errorMsg}</p>}
+              {successMsg !== null && (
+                <p className="successMsg">{successMsg}</p>
+              )}
+
               <button type="submit" value="Submit" disabled={isLoading}>
                 {isLoading ? <img src={loader} alt="loader" /> : "Submit"}
               </button>
