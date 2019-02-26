@@ -1,13 +1,14 @@
 import React, { Component } from "react"
 // import { Link } from "gatsby"
 import SEO from "../components/seo"
+import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./style.scss"
 import logo from "../images/riota-logo.png"
-
 import hotelRoom from "../images/bed-bedroom-furniture-271616.jpg"
 import hotelBar from "../images/alcohol-bar-beer-941864.jpg"
 import upsell from "../images/bar-beard-bokeh-853151.jpg"
 import manage from "../images/agreement-business-businessmen-886465.jpg"
+import loader from "../images/loader.gif"
 
 const adjectives = [
   { label: "DIGITAL", color: "#2a558a" },
@@ -19,9 +20,65 @@ export default class IndexPage extends Component {
     super(props)
     this.state = {
       adjectiveIndex: 0,
+      name: "",
+      email: "",
+      isLoading: false,
+      errorMsg: null,
+      successMsg: null,
     }
+  }
 
-    this.renderHeader = this.renderHeader.bind(this)
+  handleSubmit = async event => {
+    event.preventDefault()
+    const { email } = this.state
+    console.log("--handleSubmit--", email)
+    this.setState({
+      isLoading: true,
+      errorMsg: null,
+      successMsg: null,
+    })
+    try {
+      const response = await addToMailchimp(email)
+      console.log("--success--")
+      console.log(response)
+      if (response.result === "error") {
+        const alreadySubscribed =
+          response.msg.indexOf("is already subscribed") !== -1
+        this.setState({
+          isLoading: false,
+          errorMsg: alreadySubscribed
+            ? "You're already subscribed!"
+            : response.msg,
+        })
+      } else {
+        this.setState({
+          isLoading: false,
+          errorMsg: null,
+          successMsg: "Thank you for signing up!",
+        })
+      }
+    } catch (e) {
+      console.log("--there was an error--")
+      console.log(e)
+      this.setState({
+        isLoading: false,
+        errorMsg: e.errorMsg,
+      })
+    }
+  }
+
+  handleChangeName = event => {
+    const name = event.target.value
+    this.setState({
+      name,
+    })
+  }
+
+  handleChangeEmail = event => {
+    const email = event.target.value
+    this.setState({
+      email,
+    })
   }
 
   componentDidMount() {
@@ -33,7 +90,7 @@ export default class IndexPage extends Component {
     }, SECONDS * 1000)
   }
 
-  renderHeader() {
+  renderHeader = () => {
     const { adjectiveIndex } = this.state
     const { label, color } = adjectives[adjectiveIndex]
 
@@ -80,18 +137,32 @@ export default class IndexPage extends Component {
   }
 
   renderContact() {
+    const { isLoading } = this.state
+
     return (
       <div className="contact">
         <div className="innerColumn contactInner">
           <div className="cta">
             <h1>Contact Us</h1>
           </div>
-          <div className="formContainer">
+          <div className="formContainer" onSubmit={this.handleSubmit}>
             <p>We would love to get in touch. Let us know how to:</p>
             <form>
-              <input type="text" placeholder="Name" />
-              <input type="text" placeholder="Business Email" />
-              <input type="submit" value="Submit" />
+              <input
+                type="text"
+                placeholder="Name"
+                onChange={this.handleChangeName}
+                disabled={isLoading}
+              />
+              <input
+                type="text"
+                placeholder="Business Email"
+                onChange={this.handleChangeEmail}
+                disabled={isLoading}
+              />
+              <button type="submit" value="Submit" disabled={isLoading}>
+                {isLoading ? <img src={loader} alt="loader" /> : "Submit"}
+              </button>
             </form>
           </div>
         </div>
