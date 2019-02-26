@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-// import { Link } from "gatsby"
 import SEO from "../components/seo"
 import addToMailchimp from "gatsby-plugin-mailchimp"
 import "./style.scss"
@@ -9,6 +8,19 @@ import hotelBar from "../images/alcohol-bar-beer-941864.jpg"
 import upsell from "../images/bar-beard-bokeh-853151.jpg"
 import manage from "../images/agreement-business-businessmen-886465.jpg"
 import loader from "../images/loader.gif"
+
+//font awesome stuff
+import { library } from "@fortawesome/fontawesome-svg-core"
+// import { fab } from "@fortawesome/free-brands-svg-icons"
+import {
+  faCheckSquare,
+  faCoffee,
+  faPiggyBank,
+  faChartLine,
+} from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+
+library.add(faCheckSquare, faCoffee, faPiggyBank, faChartLine)
 
 const adjectives = [
   { label: "DIGITAL", color: "#2a558a" },
@@ -133,12 +145,14 @@ export default class IndexPage extends Component {
           </h1>
           <div className="subheaders">
             <div className="subheader">
+              <FontAwesomeIcon icon="piggy-bank" style={{ fontSize: 40 }} />
               <h2>
                 Riota helps hotels to save 35% of their in-room energy &amp;
                 water expenditures
               </h2>
             </div>
             <div className="subheader">
+              <FontAwesomeIcon icon="chart-line" style={{ fontSize: 40 }} />
               <h2>
                 Riota helps hotels to increase revenue and increase direct
                 bookings.
