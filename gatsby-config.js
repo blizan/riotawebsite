@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `Riota`,
     description: `Take your hotel to the digital era`,
+    author: `@blizan`,
   },
   plugins: [
     `gatsby-plugin-sass`,
