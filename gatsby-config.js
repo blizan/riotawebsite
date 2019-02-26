@@ -7,11 +7,19 @@ module.exports = {
   plugins: [
     `gatsby-plugin-sass`,
     `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-favicon`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: "gatsby-plugin-mailchimp",
+      options: {
+        endpoint:
+          "https://getriota.us20.list-manage.com/subscribe/post?u=44d34fa5c1bf5f36ceffa4d73&amp;id=59446b017c",
       },
     },
     `gatsby-transformer-sharp`,
