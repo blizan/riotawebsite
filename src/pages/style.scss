@@ -56,11 +56,11 @@ body {
     url("../images/bedroom-door-entrance-271639.jpg");
   background-size: cover;
   background-position: 50% 50%;
-  // background-color: $lightBlue;
+
   padding: $spacingSmall;
-  // -moz-box-shadow: inset 0 0 100px $innerShadowColor;
-  // -webkit-box-shadow: inset 0 0 100px $innerShadowColor;
-  // box-shadow: inset 0 0 100px $innerShadowColor;
+  -moz-box-shadow: inset 0 0 50px $innerShadowColor;
+  -webkit-box-shadow: inset 0 0 50px $innerShadowColor;
+  box-shadow: inset 0 0 50px $innerShadowColor;
   text-align: center;
   color: $gray5;
 
@@ -140,10 +140,13 @@ body {
   }
 
   input[type="submit"] {
-    background-color: red;
-    width: 100px;
-    height: 60px;
-    margin: 10px;
+    background-color: $blue;
+    border: 0;
+    color: $gray5;
+    font-size: 18px;
+    width: 120px;
+    height: 50px;
+    margin: 0;
   }
 }
 
